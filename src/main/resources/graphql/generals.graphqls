@@ -1,0 +1,6 @@
+# Respuestas
+type Response {
+	code : Int
+	message : String
+	details : [String]
+}

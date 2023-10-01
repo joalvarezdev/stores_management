@@ -2,6 +2,7 @@ package com.joalvarez.graphql.exception;
 
 public enum InternalCode {
 
+	OK(0, "Success operation"),
 	BAD_REQUEST(2000, "Some fields contains errors. Please see the details section to detect the mistake."),
 	ENTITY_NOT_FOUND(2200, "Entity not found."),
 	ENTITY_ALREADY_EXISTS(2201, "Entity already exists.");

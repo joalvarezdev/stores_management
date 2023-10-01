@@ -1,5 +1,6 @@
 type Query {
-	### Products
+	## Products
+	### Obtain products
 	findProductByCode(productCode: String) : Product
 	findAllProducts : [Product]
 
@@ -8,9 +9,19 @@ type Query {
 }
 
 type Mutation {
-	### Products
-	createProduct(product: InputProduct) : String
+	## Products
+	### create product
+	createProduct(product: InputProduct) : Product
+	### Update Product
+	updateProduct(product: InputProduct) : Product
+	### Delete Product
+	deleteProduct(productId: String) : Response
 
-	### Warehouse
-	createWarehouse(warehouse: InputWarehouse) : String
+	## Warehouse
+	### create Warehouse
+	createWarehouse(warehouse: InputWarehouse) : Warehouse
+	### Update Warehouse
+	updateWarehouse(warehouse: InputWarehouse) : Warehouse
+	### Delete Warehouse
+	deleteWarehouse(warehouseId: String) : Response
 }

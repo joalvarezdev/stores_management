@@ -1,6 +1,8 @@
 package com.joalvarez.graphql.controller.graphql;
 
+import com.joalvarez.baseframework.data.dto.ResponseDTO;
 import com.joalvarez.graphql.data.dto.ProductDTO;
+import com.joalvarez.graphql.exception.InternalCode;
 import com.joalvarez.graphql.service.ProductService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -29,8 +31,19 @@ public class GraphQLProductController {
 	}
 
 	@MutationMapping(name = "createProduct")
-	public String save(@Argument(name = "product") ProductDTO dto) {
-		this.service.save(dto);
-		return "Producto creado correctamente";
+	public ProductDTO save(@Argument(name = "product") ProductDTO dto) {
+		return this.service.save(dto);
 	}
+
+	@MutationMapping(name = "updateProduct")
+	public ProductDTO update(@Argument(name = "product") ProductDTO dto) {
+		return this.service.update(dto);
+	}
+
+	@MutationMapping(name = "deleteProduct")
+	public ResponseDTO delete(@Argument(name = "productId")String id) {
+		this.service.deleteById(id);
+		return new ResponseDTO(InternalCode.OK.code(), InternalCode.OK.message(), List.of());
+	}
+
 }

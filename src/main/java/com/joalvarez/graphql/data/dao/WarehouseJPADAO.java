@@ -13,4 +13,8 @@ public class WarehouseJPADAO extends BaseJPADAO<WarehouseRepository, Warehouse, 
 	public WarehouseJPADAO(WarehouseRepository repository) {
 		super(repository);
 	}
+
+	public boolean existsById(UUID id) {
+		return this.getRepository().existsById(id);
+	}
 }

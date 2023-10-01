@@ -8,4 +8,6 @@ import java.util.UUID;
 
 @Repository
 public interface WarehouseRepository extends GenericRepository<Warehouse, UUID> {
+
+	boolean existsById(UUID id);
 }

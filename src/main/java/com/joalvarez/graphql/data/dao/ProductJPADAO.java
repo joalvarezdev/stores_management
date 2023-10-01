@@ -11,4 +11,8 @@ public class ProductJPADAO extends BaseJPADAO<ProductRepository, Product, String
 	public ProductJPADAO(ProductRepository repository) {
 		super(repository);
 	}
+
+	public boolean existByCode(String code) {
+		return this.getRepository().existsByCode(code);
+	}
 }

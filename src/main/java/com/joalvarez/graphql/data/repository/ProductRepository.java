@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductRepository extends GenericRepository<Product, String> {
+
+	boolean existsByCode(String code);
 }
