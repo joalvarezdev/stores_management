@@ -1,0 +1,13 @@
+# Query - Lo utilizamos para realizar consultas.
+
+type Product {
+	code: String
+	name: String
+	price: Float
+}
+
+input InputProduct {
+	code: String!
+	name: String!
+	price: Float!
+}

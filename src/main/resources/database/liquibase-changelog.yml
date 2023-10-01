@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-products
+      author: joalvarez
+      runOnChange: true
+      changes:
+        - sqlFile:
+            path: ddl/01-products.sql
+            relativeToChangelogFile: true
+            endDelimiter: ;
+  - changeSet:
+      id: 02-warehouse
+      author: joalvarez
+      runOnChange: true
+      changes:
+        - sqlFile:
+            path: ddl/02-warehouse.sql
+            relativeToChangelogFile: true
+            endDelimiter: ;

@@ -1,0 +1,13 @@
+   ______                       __        ___     _____
+ .' ___  |                     [  |     .'   `.  |_   _|
+/ .'   \_| _ .--.  ,--.  _ .--. | |--. /  .-.  \   | |
+| |   ____[ `/'`\]`'_\ :[ '/'`\ \ .-. || |   | |   | |   _
+\ `.___]  || |    // | |,| \__/ | | | |\  `-'  \_ _| |__/ |
+ `._____.'[___]   \'-;__/| ;.__[___]|__]`.___.\__|________|
+                        [__|
+
+
+${application.title} ${application.version}
+Powered by Spring Boot ${spring-boot.version}
+Please refer to https://devops.datenkollektiv.de/banner.txt/index.html to create your own banner!
+Banner Font: roman
