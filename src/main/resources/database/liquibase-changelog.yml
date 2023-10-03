@@ -17,3 +17,12 @@ databaseChangeLog:
             path: ddl/02-warehouse.sql
             relativeToChangelogFile: true
             endDelimiter: ;
+  - changeSet:
+      id: 03-stock_movement
+      author: joalvarez
+      runOnChange: true
+      changes:
+        - sqlFile:
+            path: ddl/03-stock-movement.sql
+            relativeToChangelogFile: true
+            endDelimiter: ;
