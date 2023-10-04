@@ -13,6 +13,7 @@ public class StockMovementMapper extends BaseMapper<StockMovementDTO, StockMovem
 		super(mapper);
 	}
 
+/*
 	@Override
 	public StockMovementDTO toDTO(StockMovement entity) {
 		StockMovementDTO dto = super.toDTO(entity);
@@ -23,7 +24,7 @@ public class StockMovementMapper extends BaseMapper<StockMovementDTO, StockMovem
 		dto.setRow(entity.getId().getRow());
 
 		return dto;
-	}
+	}*/
 
 
 }

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS "movements" (
     quantity DOUBLE PRECISION NOT NULL,
     description VARCHAR(100),
     "date" TIMESTAMP NOT NULL,
-    CONSTRAINT "pk_movements" PRIMARY KEY ("id", "product_id", "warehouse_id", "row"),
+    CONSTRAINT "pk_movements" PRIMARY KEY ("id"),
     CONSTRAINT "fk_movements_products" FOREIGN KEY ("product_id") REFERENCES products("code"),
     CONSTRAINT "fk_movements_stores" FOREIGN KEY ("warehouse_id") REFERENCES stores("id")
 );
