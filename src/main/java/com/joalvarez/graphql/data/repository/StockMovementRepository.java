@@ -11,4 +11,5 @@ import java.util.UUID;
 public interface StockMovementRepository extends GenericRepository<StockMovement, UUID> {
 
 	List<StockMovement> findByProductCode(String id);
+	List<StockMovement> findByWarehouseIdAndProductCode(UUID warehouseId, String productCode);
 }

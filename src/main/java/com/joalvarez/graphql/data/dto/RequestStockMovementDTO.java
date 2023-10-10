@@ -6,11 +6,11 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class StockMovementDTO implements BaseDTO {
+public class RequestStockMovementDTO implements BaseDTO {
 
 	private UUID id;
-	private ProductDTO product;
-	private WarehouseDTO warehouse;
+	private String productId;
+	private UUID warehouseId;
 	private Integer row;
 	private String movementType;
 	private String description;
@@ -25,20 +25,20 @@ public class StockMovementDTO implements BaseDTO {
 		this.id = id;
 	}
 
-	public ProductDTO getProduct() {
-		return product;
+	public String getProductId() {
+		return productId;
 	}
 
-	public void setProduct(ProductDTO product) {
-		this.product = product;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 
-	public WarehouseDTO getWarehouse() {
-		return warehouse;
+	public UUID getWarehouseId() {
+		return warehouseId;
 	}
 
-	public void setWarehouse(WarehouseDTO warehouse) {
-		this.warehouse = warehouse;
+	public void setWarehouseId(UUID warehouseId) {
+		this.warehouseId = warehouseId;
 	}
 
 	public Integer getRow() {

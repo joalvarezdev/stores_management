@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -40,5 +41,16 @@ public class WarehouseService extends BaseService<WarehouseJPADAO, WarehouseMapp
 			);
 		}
 		return super.update(dto);
+	}
+
+	public WarehouseDTO findById(UUID id) {
+		return this.dao.findById(id)
+			.map(this.mapper::toDTO)
+			.orElseThrow(() -> new GenericException(
+				HttpStatus.BAD_REQUEST,
+				InternalCode.ENTITY_NOT_FOUND,
+				LogLevel.ERROR,
+				"Error: the warehouse do not exists"
+			));
 	}
 }

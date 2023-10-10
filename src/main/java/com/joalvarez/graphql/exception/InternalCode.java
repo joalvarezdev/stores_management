@@ -1,6 +1,8 @@
 package com.joalvarez.graphql.exception;
 
-public enum InternalCode {
+import com.joalvarez.baseframework.data.type.BaseResponseEnum;
+
+public enum InternalCode implements BaseResponseEnum {
 
 	OK(0, "Success operation"),
 	BAD_REQUEST(2000, "Some fields contains errors. Please see the details section to detect the mistake."),
@@ -15,10 +17,12 @@ public enum InternalCode {
 		this.message = message;
 	}
 
+	@Override
 	public int code() {
 		return this.code;
 	}
 
+	@Override
 	public String message() {
 		return this.message;
 	}

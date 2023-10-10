@@ -1,12 +1,12 @@
 package com.joalvarez.graphql.controller.restcontroller;
 
+import com.joalvarez.baseframework.data.dto.ResponseDTO;
+import com.joalvarez.graphql.data.dto.RequestStockMovementDTO;
 import com.joalvarez.graphql.data.dto.StockMovementDTO;
+import com.joalvarez.graphql.exception.InternalCode;
 import com.joalvarez.graphql.service.StockMovementService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -32,5 +32,11 @@ public class StockMovementController {
 		@RequestParam(name = "product_id") String productId
 	) {
 		return ResponseEntity.ok(this.service.findByWarehouseAndProductId(warehouseId, productId));
+	}
+
+	@PostMapping
+	public ResponseEntity<ResponseDTO> save(@RequestBody List<RequestStockMovementDTO> dto) {
+		this.service.saveEntities(dto);
+		return ResponseEntity.ok(new ResponseDTO(InternalCode.OK));
 	}
 }

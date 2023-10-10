@@ -18,4 +18,8 @@ public class StockMovementJPADAO extends BaseJPADAO<StockMovementRepository, Sto
 	public List<StockMovement> findAllByProductId(String id) {
 		return this.getRepository().findByProductCode(id);
 	}
+
+	public List<StockMovement> findAllByProductIdAndWarehouseId(String productId, UUID warehouseId) {
+		return this.getRepository().findByWarehouseIdAndProductCode(warehouseId, productId);
+	}
 }

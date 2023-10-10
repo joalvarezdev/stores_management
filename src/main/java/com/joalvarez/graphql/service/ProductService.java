@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class ProductService extends BaseService<ProductJPADAO, ProductMapper, ProductDTO, Product, String> {
@@ -44,5 +45,16 @@ public class ProductService extends BaseService<ProductJPADAO, ProductMapper, Pr
 			);
 		}
 		return super.get(code);
+	}
+
+	public ProductDTO findByCode(String code)	 {
+		return this.dao.findByCode(code)
+			.map(this.mapper::toDTO)
+			.orElseThrow(() -> new GenericException(
+				HttpStatus.BAD_REQUEST,
+				InternalCode.ENTITY_NOT_FOUND,
+				LogLevel.ERROR,
+				"Error: the product do not exists"
+			));
 	}
 }

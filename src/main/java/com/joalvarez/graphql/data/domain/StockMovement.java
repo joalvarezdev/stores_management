@@ -12,10 +12,10 @@ public class StockMovement {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "product_id")
 	private Product product;
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "warehouse_id")
 	private Warehouse warehouse;
 	private Integer row;
